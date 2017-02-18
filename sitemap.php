@@ -7,7 +7,7 @@
 
   $kirby->set('route', array(
     'pattern' => 'sitemap.xml',
-    'action' => function() use ($excludepages, $excludetemplates, $important) {
+    'action' => function() use ($excludepages, $excludetemplates, $excludeinvisible, $important) {
       $sitemap = tpl::load(__DIR__ . DS . 'template.php', array(
         'pages' => site()->pages(),
         'excludepages' => $excludepages,
