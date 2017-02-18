@@ -2,6 +2,7 @@
 
   $excludepages = c::get('sitemap.exclude.pages', array('error'));
   $excludetemplates = c::get('sitemap.exclude.templates', array());
+  $excludeinvisible = c::get('sitemap.exclude.invsible', array());
   $important = c::get('sitemap.important', array());
 
   $kirby->set('route', array(
@@ -11,6 +12,7 @@
         'pages' => site()->pages(),
         'excludepages' => $excludepages,
         'excludetemplates' => $excludetemplates,
+        'excludeinvisible' => $excludeinvisible,
         'important' => $important), true);
 
       return new Response($sitemap, 'xml');

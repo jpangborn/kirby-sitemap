@@ -3,6 +3,7 @@
   <?php foreach($pages->index() as $p): ?>
   <?php if(in_array($p->uri(), $excludepages)) continue ?>
   <?php if(in_array($p->template(), $excludetemplates)) continue ?>
+  <?php if(in_array($p->template(), $excludeinvisible) && $p->isInvisible()) continue ?>
   <url>
     <loc><?= html($p->url()) ?></loc>
     <lastmod><?= $p->modified('c') ?></lastmod>
