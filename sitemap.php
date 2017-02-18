@@ -4,7 +4,7 @@
   $excludetemplates = c::get('sitemap.exclude.templates', array());
   $important = c::get('sitemap.important', array());
 
-  $kirby->set('routes', array(
+  $kirby->set('route', array(
     'pattern' => 'sitemap.xml',
     'action' => function() use ($excludepages, $excludetemplates, $important) {
       $sitemap = tpl::load(__DIR__ . DS . 'template.php', array(
